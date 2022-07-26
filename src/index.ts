@@ -1,10 +1,12 @@
-import express, {Request, Response } from 'express'
+import express from 'express'
+import { db } from './database/db'
+import { router } from './routes'
 
-const app = express();
+const app = express()
 
-app.get ('/' , (req:Request, res: Response) => {
-    res.json({
-        msg: "ok"
-    })
+app.use(router)
+
+app.listen(4080, async () => {
+  await db.sync()
+  console.log('servidor rodando na porta 4080')
 })
-app.listen(4080, () => console.log('Servidor iniciado a porta 4080'))
