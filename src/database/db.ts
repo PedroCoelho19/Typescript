@@ -1,12 +1,12 @@
 import { Sequelize } from 'sequelize'
 
 export const db = new Sequelize(
-  process.env.DATABASE_NAME,
-  process.env.DATABASE_USER,
-  process.env.DATABASE_PASS,
+  'typescript',
+  'estagiario_05',
+  '741852',
   {
     dialect: 'mysql',
-    host: process.env.DATABASE_HOST,
-    port: +process.env.DATABASE_PORT
+    host: 'localhost',
+    port: 3306
   }
 )

@@ -1,4 +1,4 @@
-import { DataTypes } from 'sequelize/types'
+import { DataTypes } from 'sequelize'
 import { db } from '../db'
 
 export const UserModel = db.define('user', {
@@ -9,6 +9,10 @@ export const UserModel = db.define('user', {
     primaryKey: true
   },
   email: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  nome: {
     type: DataTypes.STRING,
     allowNull: false
   },
